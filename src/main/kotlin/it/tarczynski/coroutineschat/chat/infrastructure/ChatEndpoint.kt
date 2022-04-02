@@ -25,7 +25,7 @@ class ChatEndpoint(
     fun subscribeTo(@PathVariable channel: String): Flux<Message> = chat.forChannel(ChannelName(channel))
 
     @PostMapping(
-        path = ["/{channel}/send"],
+        path = ["/{channel}/messages"],
         consumes = [MediaType.APPLICATION_JSON_VALUE],
     )
     fun sendFluxMessage(
