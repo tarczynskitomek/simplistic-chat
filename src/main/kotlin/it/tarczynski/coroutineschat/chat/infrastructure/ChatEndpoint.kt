@@ -28,7 +28,7 @@ class ChatEndpoint(
         path = ["/{channel}/messages"],
         consumes = [MediaType.APPLICATION_JSON_VALUE],
     )
-    fun sendFluxMessage(
+    fun sendMessage(
         @PathVariable channel: String,
         @RequestBody message: Message,
     ) = chat.send(ChannelName(channel), message)
